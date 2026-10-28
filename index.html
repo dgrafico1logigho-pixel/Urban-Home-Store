@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban & Home Store | Sitio Oficial | ALMACENES LA 13 S.A.S.</title>
+    <meta name="description" content="Urban & Home Store - Moda para Hombre & Mujer, y Accesorios para el Hogar. Operado oficialmente por ALMACENES LA 13 S.A.S. en Cali, Colombia.">
+    <style>
+        :root {
+            --primary: #b86b43;
+            --primary-dark: #98522e;
+            --secondary: #3b4247;
+            --text-dark: #2c3033;
+            --text-muted: #5e646a;
+            --bg-light: #faf8f5;
+            --bg-card: #ffffff;
+            --border: #eae5de;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header & Nav */
+        header {
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container img {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-contact {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-dark) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            background-image: url('Portada%20de%20Urban%20%26%20Home%20Store.PNG');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 40px 8%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.94);
+            padding: 45px 50px;
+            border-radius: 8px;
+            max-width: 580px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-tagline {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.25s ease;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Features / Value Prop */
+        .features {
+            padding: 70px 8%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: left;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Legal & Contact Info Section */
+        .info-section {
+            padding: 80px 8%;
+            background-color: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 35px;
+        }
+
+        .info-box h3 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .info-list li strong {
+            display: inline-block;
+            width: 140px;
+            color: var(--secondary);
+        }
+
+        .info-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2326;
+            color: #d1d5db;
+            padding: 50px 8% 30px 8%;
+            font-size: 0.9rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #374151;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
+        }
+
+        .footer-nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-nav a:hover {
+            color: var(--white);
+        }
+
+        .footer-legal-bar {
+            text-align: center;
+            line-height: 1.8;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        .footer-legal-bar strong {
+            color: #f3f4f6;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero {
+                padding: 30px 5%;
+                min-height: auto;
+            }
+            .hero-content {
+                padding: 30px 20px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .features, .info-section {
+                padding: 50px 5%;
+            }
+            .info-list li strong {
+                display: block;
+                width: 100%;
+                margin-bottom: 2px;
+            }
+            footer {
+                padding: 40px 5% 25px 5%;
+            }
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Banner -->
+    <div class="top-bar">
+        Atención oficial y despacho en Colombia | <strong>Urban & Home Store</strong>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo%20de%20Urban%20%26%20Home%20Store.PNG" alt="Urban & Home Store">
+            </a>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#institucional">Información Legal</a>
+            <a href="#contacto" class="btn-contact">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="hero-tagline">Tu Estilo, Tu Espacio</span>
+            <h1>Moda y Hogar en un Solo Lugar</h1>
+            <p>Descubre colecciones exclusivas de prendas de vestir para hombre y mujer, junto con accesorios seleccionados para transformar cada rincón de tu hogar.</p>
+            <a href="#contacto" class="hero-cta">Conoce Más</a>
+        </div>
+    </section>
+
+    <!-- Nosotros / Sobre la Organización -->
+    <section id="nosotros" class="features">
+        <div class="section-header">
+            <h2>Sobre Urban & Home Store</h2>
+            <p>Urban & Home Store es un establecimiento de comercio y marca operada legalmente por <strong>ALMACENES LA 13 S.A.S.</strong>, comprometida con brindar excelencia, calidad y diseño contemporáneo a nuestros clientes en Colombia.</p>
+        </div>
+
+        <div id="colecciones" class="grid-3">
+            <div class="card">
+                <div class="card-icon">👔</div>
+                <h3>Moda Masculina</h3>
+                <p>Prendas diseñadas para ofrecer confort, estilo y sofisticación en cualquier ocasión, elaboradas con materiales de alta durabilidad.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👗</div>
+                <h3>Moda Femenina</h3>
+                <p>Colecciones versátiles que combinan las últimas tendencias con elegancia cotidiana para reflejar tu personalidad única.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏡</div>
+                <h3>Accesorios para el Hogar</h3>
+                <p>Piezas decorativas, textiles y complementos para el hogar que aportan calidez, armonía y distinción a tus espacios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información Legal y Contacto -->
+    <section id="contacto" class="info-section">
+        <div class="section-header" style="text-align: center;">
+            <h2>Transparencia y Contacto Corporativo</h2>
+            <p>Información de contacto y datos oficiales de existencia jurídica de acuerdo con el registro mercantil colombiano.</p>
+        </div>
+
+        <div class="info-grid">
+            <!-- Bloque de Contacto -->
+            <div class="info-box">
+                <h3>Atención al Cliente</h3>
+                <ul class="info-list">
+                    <li><strong>Teléfono:</strong> <a href="tel:+573104468068">+57 3104468068</a></li>
+                    <li><strong>Correo:</strong> <a href="mailto:atencioncliente@urbanhomestore.online">atencioncliente@urbanhomestore.online</a></li>
+                    <li><strong>Dirección:</strong> CL 63 NORTE # 37 - 568 CS 33</li>
+                    <li><strong>Ciudad:</strong> Cali, Valle del Cauca</li>
+                    <li><strong>País:</strong> Colombia</li>
+                    <li><strong>Horario:</strong> Lunes a Sábado: 8:00 a.m. - 6:00 p.m.</li>
+                </ul>
+            </div>
+
+            <!-- Bloque Institucional y Legal -->
+            <div id="institucional" class="info-box">
+                <h3>Información Institucional</h3>
+                <ul class="info-list">
+                    <li><strong>Razón Social:</strong> ALMACENES LA 13 S.A.S.</li>
+                    <li><strong>NIT:</strong> 900212550-4</li>
+                    <li><strong>Establecimiento:</strong> Urban & Home Store</li>
+                    <li><strong>Tipo de Entidad:</strong> Sociedad por Acciones Simplificada</li>
+                    <li><strong>Matrícula:</strong> 328427-32</li>
+                    <li><strong>Cámara de Comercio:</strong> Cámara de Comercio de Cali</li>
+                    <li><strong>Dominio Oficial:</strong> urbanhomestore.online</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="logo%20de%20Urban%20%26%20Home%20Store.PNG" alt="Urban & Home Store">
+            </div>
+            <div class="footer-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#colecciones">Colecciones</a>
+                <a href="#institucional">Información Legal</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+
+        <div class="footer-legal-bar">
+            <p>&copy; 2026 <strong>ALMACENES LA 13 S.A.S.</strong> - Todos los derechos reservados.</p>
+            <p>Razón Social: <strong>ALMACENES LA 13 S.A.S.</strong> | NIT: <strong>900212550-4</strong> | Establecimiento: <strong>Urban & Home Store</strong></p>
+            <p>Dirección: CL 63 NORTE # 37 - 568 CS 33, Cali - Valle, Colombia | Teléfono: +57 3104468068 | Correo: atencioncliente@urbanhomestore.online</p>
+            
+            <div class="footer-links">
+                <a href="privacidad.html">Políticas de Privacidad y Tratamiento de Datos</a> | 
+                <a href="terminos.html">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
